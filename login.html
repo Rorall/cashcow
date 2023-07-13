@@ -71,28 +71,7 @@
   
   
   
-    const firebase = require("firebase");
-
-const config = {
-  apiKey: "AIzaSyAI9Huli0ccXJgOfcrrSTbs3LtLu6gq_GU",
-  authDomain: "cashcow-in-html-css-and-js.firebaseapp.com",
-  databaseURL: "https://cashcow-in-html-css-and-js-default-rtdb.firebaseio.com",
-};
-
-firebase.initializeApp(config);
-
-const db = firebase.database();
-
-const user = firebase.auth().currentUser;
-
-const uid = user.uid;
-
-// Retrieve the user's data from the database
-const data = db.ref("users").child(uid).get();
-
-// Store the user's data in the database
-db.ref("users").child(uid).set(data);
-
+  
   
   </script>
 
