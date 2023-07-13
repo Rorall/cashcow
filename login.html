@@ -46,7 +46,58 @@
 
     </style>
 </head>
+
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAI9Huli0ccXJgOfcrrSTbs3LtLu6gq_GU",
+      authDomain: "cashcow-in-html-css-and-js.firebaseapp.com",
+      databaseURL: "https://cashcow-in-html-css-and-js-default-rtdb.firebaseio.com",
+      projectId: "cashcow-in-html-css-and-js",
+      storageBucket: "cashcow-in-html-css-and-js.appspot.com",
+      messagingSenderId: "775416091859",
+      appId: "1:775416091859:web:d89b0377f4b69ef85eb026"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  
+  
+  
+    const firebase = require("firebase");
+
+const config = {
+  apiKey: "AIzaSyAI9Huli0ccXJgOfcrrSTbs3LtLu6gq_GU",
+  authDomain: "cashcow-in-html-css-and-js.firebaseapp.com",
+  databaseURL: "https://cashcow-in-html-css-and-js-default-rtdb.firebaseio.com",
+};
+
+firebase.initializeApp(config);
+
+const db = firebase.database();
+
+const user = firebase.auth().currentUser;
+
+const uid = user.uid;
+
+// Retrieve the user's data from the database
+const data = db.ref("users").child(uid).get();
+
+// Store the user's data in the database
+db.ref("users").child(uid).set(data);
+
+  
+  </script>
+
 <body>
+    
     <div class="container">
         <h1>Expense And Income Tracker</h1>
 
