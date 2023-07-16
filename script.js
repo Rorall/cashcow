@@ -51,7 +51,7 @@
     $(".g-signin2").css("display", "none");
   
     // Redirect to homepage after successful sign-in
-    window.location.href = "homepage.html";
+    window.location.href = "index.html";
   }
   
   
