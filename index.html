@@ -3,14 +3,7 @@
 <head>
   <title>Expense And Income Tracker</title>
   <link rel="stylesheet" href="styles.css">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
   <style>
-    
-    
     /* Styles for different devices */
     @media only screen and (max-width: 600px) {
       
@@ -117,7 +110,6 @@
   </style>
 </head>
 <body>
-  <button onclick="exportExpenses()">Export Expenses</button>
 
   <button id="login-button">Login</button>
   <div class="container">
@@ -220,22 +212,48 @@
     <div class="message">In the total expense area, when it is income, it will be above 0, and if it is an expense, it will be negative.</div>
   </div>
 
-  
-  
-  </a>
+  <script src="script.js"></script>
+  <script src="firebase.js"></script>
   
 
+
+
+
+  
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAI9Huli0ccXJgOfcrrSTbs3LtLu6gq_GU",
+      authDomain: "cashcow-in-html-css-and-js.firebaseapp.com",
+      databaseURL: "https://cashcow-in-html-css-and-js-default-rtdb.firebaseio.com",
+      projectId: "cashcow-in-html-css-and-js",
+      storageBucket: "cashcow-in-html-css-and-js.appspot.com",
+      messagingSenderId: "775416091859",
+      appId: "1:775416091859:web:d89b0377f4b69ef85eb026"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
 
 </body>
 </html>
 
 
   <script>
+document.getElementById("login-button").addEventListener("click", function() {
+      window.location.href = "login.html";
+    });
 
 
 
 
-   
 
 
 
@@ -467,3 +485,4 @@ function filterExpenses() {
   </script>
 </body>
 </html>
+
