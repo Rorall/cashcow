@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="canonical" href="https://www.bingwebsite.com/https://www.bingwebsite.com/index.html/" />
+  <link rel="canonical" href="https://www.bingwebsite.com/" />
   <title>Expense And Income Tracker</title>
   <link rel="stylesheet" href="styles.css">
   
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
   <style>
-    
-    
     /* Styles for different devices */
     @media only screen and (max-width: 600px) {
       
-    
     }
 
     @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -118,6 +113,7 @@
   </style>
 </head>
 <body>
+  
   <button onclick="exportExpenses()">Export Expenses</button>
 
   <button id="login-button">Login</button>
@@ -220,12 +216,10 @@
 
     <div class="message">In the total expense area, when it is income, it will be above 0, and if it is an expense, it will be negative.</div>
   </div>
+  
 
-
-  
-  
-  </a>
-  
+  <!-- Add the Share button -->
+  <button id="share-button">Share</button>
 
 
 </body>
@@ -234,6 +228,35 @@
 
   <script>
 
+
+    // JavaScript code for generating a random string (unique identifier)
+    function generateRandomString(length) {
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
+    }
+
+    // Function to handle the Share button click event
+    function handleShareButtonClick() {
+      const baseUrl = 'https://www.bingwebsite.com/'; // Replace with your website's base URL
+      const uniqueIdLength = 10; // Change this to the desired length of the unique identifier
+
+      // Generate a random unique identifier
+      const uniqueId = generateRandomString(uniqueIdLength);
+
+      // Create the complete shareable URL
+      const shareUrl = baseUrl + uniqueId;
+
+      // Display the URL to the user
+      alert('Share this URL with others:\n' + shareUrl);
+    }
+
+    // Attach the click event handler to the Share button
+    const shareButton = document.getElementById('share-button');
+    shareButton.addEventListener('click', handleShareButtonClick);
 
 
 // Function to export expenses as a JSON file
